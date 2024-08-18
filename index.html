@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+    <title>Nothing but a counter</title>
+  </head>
+  <body>
+    <main class="container">
+    <center>
+      <br><br><br>
+      <h1>Nothing but a counter</h1>
+      <h6>Literally, Nothing but a counter.</h6>
+      <br><br><br>
+      <h6>Current count: <nothing-but-a-counter id="counter"></nothing-but-a-counter></h6>
+      <button onclick="updateNothingButACounter(document.getElementById('counter'))">Increase</button>
+    </center>
+    </main>
+  </body>
+  <script>function updateNothingButACounter(t){let e=new XMLHttpRequest;e.open("GET","https://nothing-but-a-counter.0k.gs/"),e.onreadystatechange=(n=>{4==e.readyState&&(t.innerText=JSON.parse(e.responseText).count)}),e.send()}Array.from(document.getElementsByTagName("nothing-but-a-counter")).forEach(t=>{setInterval(()=>{updateNothingButACounter(t)},1e3),t.innerText="Loading...",updateNothingButACounter(t)});</script>
+</html>
